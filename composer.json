@@ -1,0 +1,13 @@
+{
+    "name": "thrive/utmlink_widget-extension",
+    "type": "streams-addon",
+    "description": "Dashboard Widget for PyroCMS to create (SEO) UTM Links",
+    "autoload": {
+        "psr-4": {
+            "Thrive\\UtmlinkWidgetExtension\\": "src/"
+        }
+    },
+    "require": {
+        "php" : "^7.2"
+    }
+}

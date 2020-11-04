@@ -1,0 +1,324 @@
+<div class="card">
+
+    {# Tabs #}
+    <ul class="nav nav-sections ">
+        <li class="nav-item active">
+            <a href="#tab-a1" data-toggle="tab" class="nav-link" aria-expanded="true">
+                Required
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#tab-a2" data-toggle="tab" class="nav-link" aria-expanded="false">
+               Optional
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#tab-a3" data-toggle="tab" class="nav-link" aria-expanded="false">
+               Result
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#tab-a4" data-toggle="tab" class="nav-link" aria-expanded="false">
+               Resources
+            </a>
+        </li>						
+    </ul>
+
+    {# Panels #}
+    <div class="card-block card-body">
+
+		<div class="error_message"></div>
+
+        {# Tab 1 #}
+        <div class="tab__pane tab-pane active" id="tab-a1">
+            <div class="field-group page_title">
+
+				{# Full URL | #}
+				<div class="input-wrapper">
+					<label class="control-label" for="page_title_en">
+						Full URL
+					</label>
+					<p class="text-muted">
+						Specify the Full URL that you want to link to.
+					</p>
+					<div class="input-wrapper">
+						<textarea
+							name="utm_full_url" data-max="500"
+							placeholder="i.e. https://www.yoursite.com.au/example"
+							class="form-control"
+							required="required">{{ url("/") }}</textarea>
+					</div>
+				</div>
+
+				{# Source | utm_source #}
+				<div class="input-wrapper" style="margin-top:10px;">
+					<label class="control-label" for="page_title_en">
+						Source
+					</label>
+					<p class="text-muted">
+						Use <code>utm_source</code> to identify a search engine, newsletter name, or other source.
+					</p>
+					<div class="input-wrapper">
+						<input type="text"
+							name="utm_source" data-max="255"
+							placeholder="i.e. facebook, newsletter or linkedin"
+							class="form-control"
+							required="required">
+					</div>
+				</div>
+				{# End Source #}
+
+
+				{# Medium | utm_medium #}
+				<div class="input-wrapper" style="margin-top:10px;">
+					<label class="control-label" for="page_title_en">
+						Medium
+					</label>
+					<p class="text-muted">
+						Use <code>utm_medium</code> to identify a medium such as email or cost-per-click.
+					</p>
+					<div class="input-wrapper">
+						<input type="text"
+							name="utm_medium" data-max="255"
+							placeholder="i.e. cpc, banner, email, ad, article, post, tweet, video"
+							class="form-control"
+							required="required">
+					</div>
+				</div>
+				{# End Medium #}
+
+
+				{# Campaign | utm_campaign #}
+				<div class="input-wrapper" style="margin-top:10px;">
+					<label class="control-label" for="page_title_en">
+						Campaign Name
+					</label>
+					<p class="text-muted">
+						Used for keyword analysis. Use <code>utm_campaign</code> to identify a specific product promotion or strategic campaign.
+					</p>
+					<div class="input-wrapper">
+						<input type="text"
+							name="utm_campaign" data-max="255"
+							placeholder="i.e. running+shoes"
+							class="form-control"
+							required="required">
+					</div>
+				</div>
+				{# End Campaign #}
+
+            </div>
+        </div>
+
+        {# Tab 2 #}
+        <div class="tab__pane tab-pane" id="tab-a2">
+            <div class="field-group page_title">
+
+				{# Term. #}
+				<div class="input-wrapper" style="margin-top:10px;">
+					<label class="control-label" for="page_title_en">
+						Term
+					</label>
+					<p class="text-muted">
+						Used for paid search. Use <code>utm_term</code> to note the keywords for this ad.
+					</p>
+					<div class="input-wrapper">
+						<input type="text"
+							name="utm_term" data-max="255"
+							placeholder="i.e. free, signup"
+							class="form-control"
+							required="required">
+					</div>
+				</div>
+				{# End Term #}
+
+				{# Content. #}
+				<div class="input-wrapper" style="margin-top:10px;">
+					<label class="control-label" for="page_title_en">
+						Campaign Content
+					</label>
+					<p class="text-muted">
+						Used for A/B testing and content-targeted ads. Use <code>utm_content</code> to differentiate ads or links that point to the same URL.
+					</p>
+					<div class="input-wrapper">
+						<input type="text"
+							name="utm_content" data-max="255"
+							placeholder="i.e. link, landing"
+							class="form-control"
+							required="required">
+					</div>
+				</div>
+				{# End Content #}
+
+				{# Link Text. #}
+				<div class="input-wrapper" style="margin-top:10px;">
+					<label class="control-label">
+						Link Text
+					</label>
+					<p class="text-muted">
+						The text to display in the link
+					</p>
+					<div class="input-wrapper">
+						<input type="text"
+							name="link_text" data-max="255"
+							placeholder="Click Here"
+							value="Click Here"
+							class="form-control">
+					</div>
+				</div>
+				{# End Link TRext #}				
+
+            </div>
+        </div>
+
+        {# Tab 3 #}
+        <div class="tab__pane tab-pane" id="tab-a3">
+            <div class="field-group page_title">
+
+				<div class="input-wrapper">
+						<label class="control-label" for="page_title_en">
+							Result
+						</label>
+						<p class="text-muted">
+							The Full UTM Link
+						</p>
+						<div class="input-wrapper">
+							<textarea
+								readonly
+								name="r_result" data-max="500"
+								class="form-control"></textarea>
+						</div>
+						<label class="control-label" for="page_title_en">
+							Anchor Link
+						</label>
+						<p class="text-muted">
+							The Full HTML Link
+						</p>
+						<div class="input-wrapper">
+							<textarea
+								readonly
+								name="r_result_link" data-max="500"
+								class="form-control"></textarea>
+						</div>						
+				</div>
+
+            </div>
+        </div>
+
+        {# Tab 4 #}
+        <div class="tab__pane tab-pane" id="tab-a4">
+            <div class="field-group page_title">
+
+				<div class="input-wrapper">
+
+                        <table class="table">
+                            <tr>
+                                <th>Name</th>
+                                <th>Link</th>
+                            </tr>
+                            
+                            <tr>
+                                <td>Google Utility</td>
+                                <td>
+                                    <a href="https://ga-dev-tools.appspot.com/campaign-url-builder/" target="_new">
+                                        https://ga-dev-tools.appspot.com/campaign-url-builder/
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>UTM Builder</td>
+                                <td>
+                                    <a href="https://utmbuilder.net/" target="_new">
+                                        https://utmbuilder.net/
+                                    </a>
+                                </td>
+                            </tr>							
+
+
+                            <tr>
+                                <td>Testing UTM Builder</td>
+                                <td>
+                                    <a href="https://utmbuilder.net/testing-utm-builders/" target="_new">
+                                        https://utmbuilder.net/testing-utm-builders/
+                                    </a>
+                                </td>
+                            </tr>	
+						</table>
+				</div>				
+
+            </div>
+        </div>
+
+		<button id="getLink" class="btn btn-primary">Get Link</button>
+
+	</div>
+
+
+<script>
+    $(function () {
+
+        var url = utm_full_url = utm_source = utm_medium = utm_campaign = utm_term = utm_content = "";
+
+        $('#getLink').click(function () {
+			utm_full_url = $('textarea[name="utm_full_url"]').val().trim();
+			utm_source = $('input[name="utm_source"]').val().trim();
+			utm_medium = $('input[name="utm_medium"]').val().trim();
+			utm_campaign = $('input[name="utm_campaign"]').val().trim();
+			utm_term = $('input[name="utm_term"]').val().trim();
+			utm_content = $('input[name="utm_content"]').val().trim();
+
+            constructUrl(utm_full_url, utm_source, utm_medium, utm_campaign, utm_term, utm_content, true)
+        });
+
+        function constructUrl(utm_full_url, utm_source, 
+								utm_medium, utm_campaign, utm_term, 
+								utm_content, alerter) {
+
+			var link_text = $('input[name="link_text"]').val().trim();
+
+            if (utm_full_url.length > 0 && utm_source.length > 0) {
+                $('.error_message').html('');
+                utm_full_urlsplitter = utm_full_url.split('#');
+                var hash = [];
+                if (utm_full_urlsplitter.length > 1) {
+                    $.each(utm_full_urlsplitter, function (key, value) {
+                        if (key > 0)
+                            hash.push(encodeURIComponent(value))
+                    })
+                }
+
+                //url = utm_full_urlsplitter[0] + "?utm_source=" + encodeURIComponent(utm_source);
+				url = utm_full_urlsplitter[0] + "?utm_source=" + $.trim(utm_source).replace(' ', '%20');
+
+                if (utm_medium.length > 0) {
+                    //url += "&utm_medium=" + encodeURIComponent(utm_medium);
+					url += "&utm_medium=" + $.trim(utm_medium).replace(' ', '%20');
+                }
+                if (utm_campaign.length > 0) {
+                    //url += "&utm_campaign=" + encodeURIComponent(utm_campaign);
+					url += "&utm_campaign=" + $.trim(utm_campaign).replace(' ', '%20');
+                }
+                if (utm_term.length > 0) {
+                    //url += "&utm_term=" + encodeURIComponent(utm_term);
+					url += "&utm_term=" + $.trim(utm_term).replace(' ', '+').replace(',', '+');
+                }
+                if (utm_content.length > 0) {
+                    //url += "&utm_content=" + encodeURIComponent(utm_content);
+					url += "&utm_content=" + $.trim(utm_content).replace(' ', '%20');
+                }
+                if (hash.length > 0) {
+                    url += '#' + hash.join('#');
+                }
+				//final check
+				url = $.trim(url).replace(';',',');
+				//update the ui
+				$('textarea[name="r_result"]').val(url);
+				$('textarea[name="r_result_link"]').val('<a href="' + url + '">'+ link_text +'</a>');
+            } else {
+                $('.error_message').html('<h1 style="color: red;">required fields cannot be empty !!</h1>');
+            }
+        }
+    })
+</script>
+
+</div>
