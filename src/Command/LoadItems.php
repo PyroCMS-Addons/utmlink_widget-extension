@@ -1,6 +1,4 @@
-<?php 
-
-namespace Thrive\UtmlinkWidgetExtension\Command;
+<?php namespace Thrive\UtmlinkWidgetExtension\Command;
 
 use Anomaly\ConfigurationModule\Configuration\Contract\ConfigurationRepositoryInterface;
 use Anomaly\DashboardModule\Widget\Contract\WidgetInterface;
